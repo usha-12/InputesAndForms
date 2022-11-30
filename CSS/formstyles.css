@@ -2,12 +2,14 @@ html,
 input {
     font-family: sans-serif;
 }
+
 body {
     width: 100%;
     max-width: 600px;
     margin: 0px auto;
     padding: 2em;
 }
+
 .headerContainer {
     display: flex;
     flex-flow: column wrap;
@@ -42,6 +44,7 @@ label {
     width: 30%;
     margin-right: 2%;
 }
+
 input {
     flex: auto;
 }
@@ -50,6 +53,7 @@ button {
     width: 70%;
     margin: 0 auto;
 }
+
 error-output {
     font-size: 12px;
     font-style: italic;
