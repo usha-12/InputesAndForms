@@ -57,5 +57,5 @@ button {
 error-output {
     font-size: 12px;
     font-style: italic;
-    color: rgb(255, 0, 0);
+    color: red;
 }
