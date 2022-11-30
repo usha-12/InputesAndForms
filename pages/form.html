@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
-    <title>Basic input types</title>
+    <title>Basic Validation</title>
     <link rel="stylesheet" href="../css/formstyles.css">
 </head>
 
@@ -18,6 +18,13 @@
             <input type="text" id="text" name="text">
             <error-output class="text-error" for="text"></error-output>
         </div>
+
+        <div>
+            <label for="email">Enter Email: </label>
+            <input type="email" id="email" name="email">
+            <error-output class="email-error" for="email"></error-output>
+        </div>
+
         <div>
             <button>Submit</button>
         </div>
@@ -31,6 +38,14 @@
                 textError.textContent = "";
             else textError.textContent = "Invalid first name ";
         });
+
+        const emailError = document.querySelector('.email-error');
+        email.addEventListener('input', function() {
+            const regEmail = /^[A-Za-z0-9]+([-\\\\.\\\\+\\\\_][0-9A-Za-z]+)*[@][A-Za-z0-9]+.[a-zA-Z]{2,4}([\\\\.\\\\,][a-z]{2,3})?$/;
+            if (regEmail.test(email.value))
+                emailError.textContent = "";
+            else emailError.textContent = "Invalid email ";
+        })
     </script>
 </body>
 
