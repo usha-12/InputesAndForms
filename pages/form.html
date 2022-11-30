@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Basic input types</title>
+    <link rel="stylesheet" href="../css/formstyles.css">
+</head>
+
+<body>
+    <form>
+        <header class="headerContainer">
+            <h1>HTML 5 Form Input Fields</h1>
+        </header>
+        <div>
+            <label for="text">Enter First Name: </label>
+            <input type="text" id="text" name="text">
+            <error-output class="text-error" for="text"></error-output>
+        </div>
+        <div>
+            <button>Submit</button>
+        </div>
+    </form>
+    <script>
+        const text = document.querySelector('#text');
+        const textError = document.querySelector('.text-error');
+        text.addEventListener('input', function() {
+            const regName = /^[A-Z][a-z]{2,}$/;
+            if (regName.test(text.value))
+                textError.textContent = "";
+            else textError.textContent = "Invalid first name ";
+        });
+    </script>
+</body>
+
+</html>
