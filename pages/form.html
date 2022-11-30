@@ -32,6 +32,12 @@
         </div>
 
         <div>
+            <label for="password">Enter Password: </label>
+            <input type="password" id="password" name="password">
+            <error-output class="password-error" for="password"></error-output>
+        </div>
+
+        <div>
             <button>Submit</button>
         </div>
     </form>
@@ -59,6 +65,14 @@
             if (regtel.test(tel.value))
                 telError.textContent = "";
             else telError.textContent = "Invalid MonileNo ";
+        });
+
+        const pwdError1 = document.querySelector('.password-error');
+        password.addEventListener('input', function() {
+            const regPwd = /^[a-zA-Z0-9@#!]{8}[a-zA-z0-9@#!]*/;
+            if (regPwd.test(password.value))
+                pwdError1.textContent = "";
+            else pwdError1.textContent = "Invalid Password ";
         });
     </script>
 </body>
